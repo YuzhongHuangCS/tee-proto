@@ -7,7 +7,7 @@ $(document).ready(function(){
 });
 function changeBanner(bannerID){
 	var newSrc;
-	newSrc = 'img/bg' + bannerID + '.jpg';
+	newSrc = 'http://teeshirt-img.stor.sinaapp.com/banner/banner' + bannerID + '.jpg';
 	$('#nextBanner').attr("src", newSrc);
 	$('#currentBanner').fadeOut('slow');
 	$('#nextBanner').fadeIn('slow', function() {

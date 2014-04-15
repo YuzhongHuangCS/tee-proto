@@ -19,6 +19,11 @@
 ::-webkit-scrollbar{width: 6px;}
 ::-webkit-scrollbar-thumb{background:#999;}
 
+@green: #76CC1E;
+@orange: #F66B30;
+body{
+	background-color: #F8F8F8;
+}
 .navbar{
 	margin-bottom: 0;
  	background-color: #FFF;
@@ -26,7 +31,7 @@
 
 	.navbar-brand{
 		margin: 0.5rem 2rem 0.5rem 6rem;
-		color: #76CC1E;
+		color: @green;
 		font-size: 2.5rem;
 		font-weight: bolder;
 		&:hover{
@@ -87,6 +92,100 @@
 		}
 		.anchorActive{
 			background-color: #0B1902;
+		}
+	}
+}
+.popular{
+	margin: 42% auto 10rem;
+	width: 80%;
+	#hot{
+		margin-left: 8rem;
+		display: inline-block;
+		border: 2px solid @green;
+		border-radius: 0.8rem;
+		transition: all 0.5s;
+		&:hover{
+			background-color: @green;
+			p{
+				color: #FFF;
+			}
+		}
+		p{
+			font-size: 2.5rem;
+			color: @green;
+			margin: 0.5rem 1.5rem;
+			transision: all 1s;
+		}
+	}
+	.line{
+		width: 100%;
+		height: 2px;
+		margin-top: 1rem;
+		background-color: @green;
+	}
+	.gallery{
+		padding: 2rem;
+		height: 100%;
+		box-shadow: 1px 1px 3px rgba(0,0,0,.15);
+		background-color: #FFF;
+		display: flex;
+		flex-flow: row wrap;
+		align-items: stretch;
+		justify-content: space-around;
+		align-content: stretch;
+		.item{
+			flex-basis: 33%;
+			padding: 1.5rem;
+			transition: all 0.5s;
+			color: @green;
+			img{
+				width: 100%;
+				transition: opacity 0.5s;
+				&:hover{
+					opacity: 0.8;
+				}
+			}
+			&:hover{
+				box-shadow: 0 0 12px rgba(0,0,0,.2);
+			}
+			.desc{
+				padding-left: 1rem;
+				.price{
+					float: right;
+					margin-top: -4.8rem;
+					font-size: 3rem;
+					color: @orange;
+				}
+				border-left: 3px solid @green;
+			}
+			.status{
+				color: #666;
+				display: flex;
+				flex-flow: row nowrap;
+				align-items: flex-start;
+				justify-content: space-between;
+				align-content: stretch;
+				.up{
+					font-weight: bold;
+				}
+				.support{
+					color: @orange;
+					border: 2px solid @orange;
+					border-radius: 0.6rem;
+					transition: all 0.5s;
+					p{
+						margin: 0.5rem 1.2rem;
+						font-size: 2.2rem;
+						transition: all 0.5s;
+					}
+					&:hover{
+						background-color: @orange;
+						p{
+							color: #FFF;
+						}
+					}
+				}
+			}
 		}
 	}
 }

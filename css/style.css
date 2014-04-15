@@ -6,6 +6,7 @@
 ::-webkit-scrollbar-track-piece{background-color:#eee}
 ::-webkit-scrollbar{width:6px}
 ::-webkit-scrollbar-thumb{background:#999}
+body{background-color:#f8f8f8}
 .navbar{margin-bottom:0;background-color:#fff;border-bottom:1px solid #ccc}.navbar .navbar-brand{margin:.5rem 2rem .5rem 6rem;color:#76cc1e;font-size:2.5rem;font-weight:bolder}.navbar .navbar-brand:hover{color:#76cc1e}
 .navbar ul{padding-right:2rem;border-right:1px solid #ccc}
 .navbar li{padding:.5rem 1rem;font-weight:bold;transition:all .4s}.navbar li:hover{color:#75796f;background-color:#eef2ea}
@@ -15,3 +16,12 @@
 .banner #nextBanner{display:none}
 .banner #bannerController{position:absolute;z-index:10;top:80%;width:100%;text-align:center}.banner #bannerController .anchor{display:inline-block;width:1rem;height:1rem;background-color:#9fb59e;border-radius:.5rem}
 .banner #bannerController .anchorActive{background-color:#0b1902}
+.popular{margin:42% auto 10rem;width:80%}.popular #hot{margin-left:8rem;display:inline-block;border:2px solid #76cc1e;border-radius:.8rem;transition:all .5s}.popular #hot:hover{background-color:#76cc1e}.popular #hot:hover p{color:#fff}
+.popular #hot p{font-size:2.5rem;color:#76cc1e;margin:.5rem 1.5rem;transision:all 1s}
+.popular .line{width:100%;height:2px;margin-top:1rem;background-color:#76cc1e}
+.popular .gallery{padding:2rem;height:100%;box-shadow:1px 1px 3px rgba(0,0,0,0.15);background-color:#fff;display:flex;flex-flow:row wrap;align-items:stretch;justify-content:space-around;align-content:stretch}.popular .gallery .item{flex-basis:33%;padding:1.5rem;transition:all .5s;color:#76cc1e}.popular .gallery .item img{width:100%;transition:opacity .5s}.popular .gallery .item img:hover{opacity:.8}
+.popular .gallery .item:hover{box-shadow:0 0 12px rgba(0,0,0,0.2)}
+.popular .gallery .item .desc{padding-left:1rem;border-left:3px solid #76cc1e}.popular .gallery .item .desc .price{float:right;margin-top:-4.8rem;font-size:3rem;color:#f66b30}
+.popular .gallery .item .status{color:#666;display:flex;flex-flow:row nowrap;align-items:flex-start;justify-content:space-between;align-content:stretch}.popular .gallery .item .status .up{font-weight:bold}
+.popular .gallery .item .status .support{color:#f66b30;border:2px solid #f66b30;border-radius:.6rem;transition:all .5s}.popular .gallery .item .status .support p{margin:.5rem 1.2rem;font-size:2.2rem;transition:all .5s}
+.popular .gallery .item .status .support:hover{background-color:#f66b30}.popular .gallery .item .status .support:hover p{color:#fff}
