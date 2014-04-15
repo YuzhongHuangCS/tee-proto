@@ -10,7 +10,7 @@
 </head>
 <body class="font-hei">
 	<nav class="navbar navbar-default" role="navigation">
-		<!-- Brand and toggle get grouped for better mobile display -->
+		<!-- mobile view -->
 		<div class="navbar-header">
 		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#tee-navbar-collapse">
 			<span class="sr-only">Toggle navigation</span>
@@ -21,7 +21,7 @@
 		<a class="navbar-brand" href="#">Tee-Shirt</a>
 		</div>
 
-		<!-- Collect the nav links, forms, and other content for toggling -->
+		<!-- PC view -->
 		<div class="collapse navbar-collapse" id="tee-navbar-collapse">
 			<ul class="nav navbar-nav">
 				<li><a href="#">Discover</a></li>
@@ -39,17 +39,27 @@
 				<li><a href="#" id="bule">Sign up</a></li>
 				<li><a href="#" id="bule">Log in</a></li>
 			</ul>
-		</div><!-- /.navbar-collapse -->
+		</div>
 	</nav>
 
 	<div class="banner">
-		<img id="currentBanner" src="http://teeshirt-img.stor.sinaapp.com/banner/banner1.jpg">
-		<img id="nextBanner" src="">
-		<div id="bannerController">
-			<div class="anchor anchorActive" target="1"></div>
-			<div class="anchor" target="2"></div>
-			<div class="anchor" target="3"></div>
-		</div>
+		<?php
+		$currentBanner = rand(1, 3);
+		$content = '';
+
+		$content .= '<img id="currentBanner" src="http://teeshirt-img.stor.sinaapp.com/banner/banner' . $currentBanner . '.jpg">';
+		$content .= '<img id="nextBanner" src="">';
+		$content .= '<div id="bannerController">';
+		for($i=1; $i<=3; $i++){
+			if($i === $currentBanner){
+				$content .= '<div class="anchor anchorActive" target="' . $i . '"></div>';
+			} else{
+				$content .= '<div class="anchor" target="' . $i . '"></div>';
+			}
+		}
+		$content .= '</div>';
+		echo($content);
+		?>
 	</div>
 
 	<div class="popular">
@@ -58,61 +68,40 @@
 			</div>
 		<div class="line"></div>
 		<div class="gallery">
-			<div class="item">
-				<img src="http://teeshirt-img.stor.sinaapp.com/item/item1.png">
-				<div class="desc">
-					<p class="titile">YouandMe</p>
-					<p class="author">南国</p>
-					<p class="price">49元</p>
-				</div>
-				<hr>
-				<div class="status">
-					<div class="percent"><p class="up">75%</p><p>已达到</p></div>
-					<div class="reach"><p class="up">¥7520</p><p>已获支持</p></div>
-					<div class="time"><p class="up">25天</p><p>剩余时间</p></div>
-					<div class="support"><p>支持</p></div>
-				</div>
-				<div class="progress">
-					<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;"></div>
-				</div>
-			</div>
-			<div class="item">
-				<img src="http://teeshirt-img.stor.sinaapp.com/item/item2.png">
-				<div class="desc">
-					<p class="titile">YouandMe</p>
-					<p class="author">南国</p>
-					<p class="price">49元</p>
-				</div>
-				<hr>
-				<div class="status">
-					<div class="percent"><p class="up">75%</p><p>已达到</p></div>
-					<div class="reach"><p class="up">¥7520</p><p>已获支持</p></div>
-					<div class="time"><p class="up">25天</p><p>剩余时间</p></div>
-					<div class="support"><p>支持</p></div>
-				</div>
-				<div class="progress">
-					<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;"></div>
-				</div>
-			</div>
-			<div class="item">
-				<img src="http://teeshirt-img.stor.sinaapp.com/item/item4.png">
-				<div class="desc">
-					<p class="titile">YouandMe</p>
-					<p class="author">南国</p>
-					<p class="price">49元</p>
-				</div>
-				<hr>
-				<div class="status">
-					<div class="percent"><p class="up">75%</p><p>已达到</p></div>
-					<div class="reach"><p class="up">¥7520</p><p>已获支持</p></div>
-					<div class="time"><p class="up">25天</p><p>剩余时间</p></div>
-					<div class="support"><p>支持</p></div>
-				</div>
-				<div class="progress">
-					<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;"></div>
-				</div>
-			</div>
+			<?php
+				require('php/init.php');
+				$sql = 'SELECT `title`, `author`, `price`, `img`, `expect`, `support`, `remainday` FROM `item` ORDER BY `rank` LIMIT 6';
+				$result=$conn->query($sql);
+				$content = '';
+				while($row=$result->fetch_object()){
+					$content .= '<div class="item">';
+					$content .= 	'<img src="' . $row->img . '">';
+					$content .= 	'<div class="description">';
+					$content .= 		'<p class="title">'	. $row->title . '</p>';
+					$content .=			'<p class="author">' . $row->author . '</p>';
+					$content .= 		'<p class="price">'	. $row->price . '</p>';
+					$content .=		'</div>';
+					$content .=		'<hr />';
+					$content .= 	'<div class="status">';
+					$content .= 		'<div class="percent"><p>已达到</p><p class="bold">' . round( ($row->support)/($row->expect)*100 ) .  '%</p></div>';
+					$content .=			'<div class="reach"><p>已获支持</p><p class="bold">¥' . $row->support . '</p></div>';
+					$content .=			'<div class="time"><p>剩余时间</p><p class="bold">' . $row->remainday . '</p></div>';
+					$content .=			'<div class="support"><p>支持</p></div>';
+					$content .= 	'</div>';
+					$content .= 	'<div class="progress">';
+					$content .= 		'<div class="progress-bar progress-bar-success" role="progressbar" style="width: ' . round( ($row->support)/($row->expect)*100 ) . '%"></div>';
+					$content .=		'</div>';
+					$content .= '</div>';
+				}
+				echo $content;
+				$result->close();
+				$conn->close();
+				?>
 		</div>
+	</div>
+	<div class="footer">
+		<br/>
+		<p>@Tee-Shirt</p>
 	</div>
 <script src="js/jquery.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
