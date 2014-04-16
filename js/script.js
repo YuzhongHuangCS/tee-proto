@@ -14,6 +14,19 @@ $(document).ready(function(){
 			});
 		});
 	});
+	var navElement = document.querySelector("nav");
+	var headroom = new Headroom(navElement, {
+  		"tolerance": 5,
+  		"offset": 205,
+ 		"classes": {
+  		 	"initial": "animated",
+    		"pinned": "slideInDown",
+    		"unpinned": "slideOutUp"
+  		}
+	});
+headroom.init();
+	// 初始化
+	headroom.init(); 
 });
 function changeBanner(bannerID){
 	var newSrc;

@@ -6,60 +6,14 @@
 	<meta name="keywords" content="tee, shirt, t-shirt" >
 	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
 	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/plugin.css">
 	<link rel="stylesheet" href="css/style.css">
 </head>
 <body class="font-hei index">
-	<nav class="navbar navbar-default" role="navigation">
-		<!-- mobile view -->
-		<div class="navbar-header">
-		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#tee-navbar-collapse">
-			<span class="sr-only">Toggle navigation</span>
-			<span class="icon-bar"></span>
-			<span class="icon-bar"></span>
-			<span class="icon-bar"></span>
-		</button>
-		<a class="navbar-brand" href="index.php">Tee-Shirt</a>
-		</div>
-
-		<!-- PC view -->
-		<div class="collapse navbar-collapse" id="tee-navbar-collapse">
-			<ul class="nav navbar-nav">
-				<li><a href="more.php">发现</a></li>
-				<li><a onclick="login()">现在开始</a></li>
-			</ul>
-
-			<form class="navbar-form navbar-left" role="search">
-			<div class="form-group">
-				<span class="glyphicon glyphicon-search"></span>
-				<input type="text" class="form-control" placeholder="搜索项目">
-			</div>
-			</form>
-
-			<ul class="nav navbar-nav navbar-right">
-				<li><a href="#" id="loginButton" onclick="login()">注册 / 登录</a></li>
-			</ul>
-		</div>
-	</nav>
-
-	<div class="banner">
-		<?php
-		$currentBanner = rand(1, 3);
-		$content = '';
-
-		$content .= '<img id="currentBanner" src="http://teeshirt-img.stor.sinaapp.com/banner/banner' . $currentBanner . '.jpg">';
-		$content .= '<img id="nextBanner" src="">';
-		$content .= '<div id="bannerController">';
-		for($i=1; $i<=3; $i++){
-			if($i === $currentBanner){
-				$content .= '<div class="anchor anchorActive" target="' . $i . '"></div>';
-			} else{
-				$content .= '<div class="anchor" target="' . $i . '"></div>';
-			}
-		}
-		$content .= '</div>';
-		echo($content);
-		?>
-	</div>
+	<?php
+		require ('php/nav.php');
+		require ('php/banner.php');
+	?>
 
 	<div class="popular">
 			<div class="intro">
@@ -106,29 +60,15 @@
 			<p>More <span class="glyphicon glyphicon-chevron-right"></span></p>
 		</div>
 	</div>
-	<div class="footerBar">
-		<p class="big font-song">@Tee-Shirt</p>
-		<div class="words">
-			<p>Copyright©2014 Tee-Shirt</p>
-			<p>关注我们: &nbsp;新浪微博/QQ空间/QQ群</p>
-		</div>
-	</div>
-	<div id="loginView">
-		<div class="flag">
-			<p>使用合作网站账号登录</p>
-		</div>
-		<div class="row">
-			<img src="img/qq.png">
-			<img src="img/weibo.png">
-			<img src="img/renren.png">
-			<img src="img/douban.png">
-		</div>
-		<div class="success">
-			<p>登录成功</p>
-		</div>
-	</div>
+
+	<?php
+		require('php/footer.php');
+		require('php/loginView.php');
+	?>
+
 <script src="js/jquery.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
+<script src="js/plugin.js"></script>
 <script src="js/script.js"></script>
 </body>
 </html>

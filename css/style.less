@@ -26,9 +26,14 @@ body{
 	overflow-x: hidden;
 }
 .navbar{
-	margin-bottom: 0;
- 	background-color: #FFF;
+	top: 0;
+	width: 100%;
+ 	border: 0;
  	border-bottom: 1px solid #CCC;
+ 	border-radius: 0;
+ 	background-color: #FFF;
+ 	z-index: 30;
+ 	position: fixed;
 
 	.navbar-brand{
 		margin: 0.5rem 2rem 0.5rem 6rem;
@@ -74,6 +79,7 @@ body{
 	img{
 		position: absolute;
 		width: 100%;
+		top: 6rem;
 	}
 	#nextBanner{
 		display: none;
@@ -98,7 +104,7 @@ body{
 	}
 }
 .index .popular{
-	margin: 42% auto 10rem;
+	margin: 46% auto 10rem;
 	.gallery{
 		.item{
 			flex-basis: 33%;
@@ -106,7 +112,7 @@ body{
 	}
 }
 .more .popular{
-	margin: 5rem auto 10rem;
+	margin: 8rem auto 10rem;
 	.gallery{
 		.item{
 			flex-basis: 25%;
@@ -262,7 +268,7 @@ body{
 		}
 	}
 }
-.footerBar{
+footer{
 	height: 26rem;
 	width: 100%;
 	background-color: #5CB85C;
@@ -277,7 +283,7 @@ body{
 		padding: 0rem 14rem;
 		text-align: right;
 		color: #FFF;
-		font-size: 1.5rem;
+		font-size: 1.6rem;
 		p:last-child{
 			font-size: 1.8rem;
 		}
@@ -292,7 +298,7 @@ body{
 	height: 100%;
 	opacity: 0;
 	transition: all 0.5s;
-	z-index: 20;
+	z-index: 50;
 	.flag{
 		margin: 15% auto 0;
 		width: 30%;
