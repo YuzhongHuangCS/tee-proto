@@ -23,6 +23,7 @@
 @orange: #F66B30;
 body{
 	background-color: #F8F8F8;
+	overflow-x: hidden;
 }
 .navbar{
 	margin-bottom: 0;
@@ -60,7 +61,7 @@ body{
 			border: 0;
 		}
 	}
-	#bule{
+	#login{
 		color: #0096BB;
 		transition: all 0.4s;
 		&:hover{
@@ -85,6 +86,7 @@ body{
 		text-align: center;
 		.anchor{
 			display: inline-block;
+			margin: 0 0.3rem;
 			width: 1rem;
 			height: 1rem;
 			background-color: #9FB59E;
@@ -95,28 +97,73 @@ body{
 		}
 	}
 }
-.popular{
+.index .popular{
 	margin: 42% auto 10rem;
-	width: 80%;
-	#hot{
-		margin-left: 8rem;
-		display: inline-block;
-		border: 2px solid @green;
-		border-radius: 0.8rem;
-		transition: all 0.5s;
-		&:hover{
-			background-color: @green;
-			p{
-				color: #FFF;
-			}
-		}
-		p{
-			font-size: 2.5rem;
-			color: @green;
-			margin: 0.5rem 1.5rem;
-			transision: all 1s;
+	.gallery{
+		.item{
+			flex-basis: 33%;
 		}
 	}
+}
+.more .popular{
+	margin: 5rem auto 10rem;
+	.gallery{
+		.item{
+			flex-basis: 25%;
+		}
+	}
+}
+.popular{
+	width: 80%;
+	.intro{
+		width: 100%;
+		display: inline-block;
+		#hot{
+			margin-left: 6rem;
+			display: inline-block;
+			border: 2px solid @green;
+			border-radius: 0.8rem;
+			transition: all 0.5s;
+			&:hover{
+				background-color: @green;
+				p{
+					color: #FFF;
+				}
+			}
+			p{
+				font-size: 2.5rem;
+				color: @green;
+				margin: 0.5rem 1.5rem;
+				transision: all 1s;
+			}
+		}
+		#more{
+			float: right;
+			display: inline-block;
+			border: 2px solid @orange;
+			border-radius: 0.8rem;
+			transition: all 0.5s;
+			cursor: pointer;
+			&:hover{
+				background-color: @orange;
+				p{
+					color: #FFF;
+				}
+			}
+			p{
+				font-size: 2.5rem;
+				color: @orange;
+				margin: 0.5rem 1.5rem;
+				transision: all 1s;
+				span{
+					margin-bottom: 5px;
+					font-size: 2.5rem;
+					vertical-align: bottom;
+				}
+			}
+		}
+	}
+
 	.line{
 		width: 100%;
 		height: 2px;
@@ -131,10 +178,9 @@ body{
 		display: flex;
 		flex-flow: row wrap;
 		align-items: stretch;
-		justify-content: space-around;
+		justify-content: flex-start;
 		align-content: stretch;
 		.item{
-			flex-basis: 33%;
 			padding: 1.5rem;
 			transition: all 0.5s;
 			color: @green;
@@ -188,15 +234,98 @@ body{
 			}
 		}
 	}
+	.continue{
+		width: 100%;
+		margin-top: 4rem;
+		text-align: center;
+		border: 2px solid @green;
+		border-radius: 0.8rem;
+		transition: all 0.5s;
+		cursor: pointer;
+		p{
+			font-size: 2rem;
+			span{
+				font-size: 2rem;
+			}
+		}
+		&:hover{
+			background-color: @green;
+			p{
+				color: #FFF;
+			}
+		}
+		p{
+			font-size: 2.5rem;
+			color: @green;
+			margin: 0.5rem 1.5rem;
+			transision: all 1s;
+		}
+	}
 }
-.footer{
-	height: 24rem;
+.footerBar{
+	height: 26rem;
 	width: 100%;
-	background-color: @green;
-	text-align: center;
-	p{
+	background-color: #5CB85C;
+	.big{
+		padding-top: 8rem;
+		text-align: center;
+		font-size: 7rem;
 		color: #FFF;
-		font-size: 5rem;
-		margin-top: 100px;
+		cursor: pointer;
+	}
+	.words{
+		padding: 0rem 14rem;
+		text-align: right;
+		color: #FFF;
+		font-size: 1.5rem;
+		p:last-child{
+			font-size: 1.8rem;
+		}
+	}
+}
+#loginView{
+	position: absolute;
+	top: 0;
+	left: 100%;
+	background-color: #000;
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+	transition: all 0.5s;
+	z-index: 20;
+	.flag{
+		margin: 15% auto 0;
+		width: 30%;
+		color: @orange;
+		text-align: center;
+		border: 2px solid @orange;
+		border-radius: 0.8rem;
+		p{
+			margin: 1.5rem;
+			font-size: 2.2rem;
+		}
+	}
+	.row{
+		margin-top: 2rem;
+		text-align: center;
+		opacity: 1;
+		img{
+			width: 64px;
+			margin: 1.8rem;
+			border-radius: 10px;
+		}
+	}
+	.success{
+		margin: 4rem auto 0;
+		width: 20%;
+		color: @green;
+		text-align: center;
+		border: 2px solid @green;
+		border-radius: 0.8rem;
+		display: none;
+		p{
+			margin: 1.5rem;
+			font-size: 2.2rem;
+		}
 	}
 }

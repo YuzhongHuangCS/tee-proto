@@ -4,6 +4,16 @@ $(document).ready(function(){
 		changeBanner($(this).attr("target"));
 		$(this).addClass('anchorActive');
 	});
+	$('#loginView .row img').click(function(){
+		$('#loginView .row').slideUp(400, function() {
+			$('#loginView .success').fadeIn(600, function() {
+				setTimeout(function(){
+					$('#loginView').css({"left":"100%", "opacity": "0"});
+					$('#loginButton').text("黄羽众PillowSky")
+				}, 600);
+			});
+		});
+	});
 });
 function changeBanner(bannerID){
 	var newSrc;
@@ -15,4 +25,9 @@ function changeBanner(bannerID){
 		$('#currentBanner').show();
 		$('#nextBanner').hide();
 	});
+}
+function login(){
+	$('#loginView .success').hide();
+	$('#loginView .row').show();
+	$('#loginView').css({"left":"0", "opacity": "0.9"});	
 }

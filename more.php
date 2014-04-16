@@ -8,7 +8,7 @@
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/style.css">
 </head>
-<body class="font-hei index">
+<body class="font-hei more">
 	<nav class="navbar navbar-default" role="navigation">
 		<!-- mobile view -->
 		<div class="navbar-header">
@@ -41,40 +41,17 @@
 		</div>
 	</nav>
 
-	<div class="banner">
-		<?php
-		$currentBanner = rand(1, 3);
-		$content = '';
-
-		$content .= '<img id="currentBanner" src="http://teeshirt-img.stor.sinaapp.com/banner/banner' . $currentBanner . '.jpg">';
-		$content .= '<img id="nextBanner" src="">';
-		$content .= '<div id="bannerController">';
-		for($i=1; $i<=3; $i++){
-			if($i === $currentBanner){
-				$content .= '<div class="anchor anchorActive" target="' . $i . '"></div>';
-			} else{
-				$content .= '<div class="anchor" target="' . $i . '"></div>';
-			}
-		}
-		$content .= '</div>';
-		echo($content);
-		?>
-	</div>
-
 	<div class="popular">
 			<div class="intro">
 				<div id="hot">
-					<p>热门项目</p>
-				</div>
-				<div id="more" onclick="location.href='more.php'">
-					<p>所有项目 <span class="glyphicon glyphicon-circle-arrow-right"></span></p>
+					<p>所有项目</p>
 				</div>
 			</div>
 		<div class="line"></div>
 		<div class="gallery">
 			<?php
 				require('php/init.php');
-				$sql = 'SELECT item.id, item.title, item.author, item.price, item.img, item.expect, item.support, item.remain FROM hot_item JOIN item ON hot_item.item_id = item.id ORDER BY hot_item.rank';
+				$sql = 'SELECT id, title, author, price, img, expect, support, remain FROM item ORDER BY rank';
 				$result=$conn->query($sql);
 				$content = '';
 				while($row=$result->fetch_object()){
@@ -102,15 +79,12 @@
 				$conn->close();
 				?>
 		</div>
-		<div class="continue" onclick="location.href='more.php'">
-			<p>More <span class="glyphicon glyphicon-chevron-right"></span></p>
-		</div>
 	</div>
 	<div class="footerBar">
 		<p class="big font-song">@Tee-Shirt</p>
 		<div class="words">
 			<p>Copyright©2014 Tee-Shirt</p>
-			<p>关注我们: &nbsp;新浪微博/QQ空间/QQ群</p>
+			<p>关注我们: 新浪微博/QQ空间/QQ群</p>
 		</div>
 	</div>
 	<div id="loginView">
