@@ -6,6 +6,7 @@
 	<meta name="keywords" content="tee, shirt, t-shirt" >
 	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
 	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/plugin.css">
 	<link rel="stylesheet" href="css/style.css">
 </head>
 <body class="font-hei more">
@@ -48,8 +49,7 @@
 				}
 				echo $content;
 				$result->close();
-				$conn->close();
-				?>
+			?>
 		</div>
 	</div>
 

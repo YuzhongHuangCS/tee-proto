@@ -23,7 +23,7 @@ body{background-color:#f8f8f8;overflow-x:hidden}
 .popular .intro #more{float:right;display:inline-block;border:2px solid #f66b30;border-radius:.8rem;transition:all .5s;cursor:pointer}.popular .intro #more:hover{background-color:#f66b30}.popular .intro #more:hover p{color:#fff}
 .popular .intro #more p{font-size:2.5rem;color:#f66b30;margin:.5rem 1.5rem;transision:all 1s}.popular .intro #more p span{margin-bottom:5px;font-size:2.5rem;vertical-align:bottom}
 .popular .line{width:100%;height:2px;margin-top:1rem;background-color:#76cc1e}
-.popular .gallery{padding:2rem;height:100%;box-shadow:1px 1px 3px rgba(0,0,0,0.15);background-color:#fff;display:flex;flex-flow:row wrap;align-items:stretch;justify-content:flex-start;align-content:stretch}.popular .gallery .item{padding:1.5rem;transition:all .5s;color:#76cc1e}.popular .gallery .item img{width:100%;transition:opacity .5s}.popular .gallery .item img:hover{opacity:.8}
+.popular .gallery{padding:2rem;box-shadow:1px 1px 3px rgba(0,0,0,0.15);background-color:#fff;display:flex;flex-flow:row wrap;align-items:stretch;justify-content:flex-start;align-content:stretch}.popular .gallery .item{padding:1.5rem;transition:all .5s;color:#76cc1e}.popular .gallery .item img{width:100%;transition:opacity .5s}.popular .gallery .item img:hover{opacity:.8}
 .popular .gallery .item:hover{box-shadow:0 0 12px rgba(0,0,0,0.2)}
 .popular .gallery .item .description{padding-left:1rem;border-left:3px solid #76cc1e}.popular .gallery .item .description .price{float:right;margin-top:-4.8rem;font-size:3rem;color:#f66b30}
 .popular .gallery .item .status{color:#666;display:flex;flex-flow:row nowrap;align-items:flex-start;justify-content:space-between;align-content:stretch}.popular .gallery .item .status .bold{font-weight:bold}
@@ -32,6 +32,24 @@ body{background-color:#f8f8f8;overflow-x:hidden}
 .popular .continue{width:100%;margin-top:4rem;text-align:center;border:2px solid #76cc1e;border-radius:.8rem;transition:all .5s;cursor:pointer}.popular .continue p{font-size:2rem}.popular .continue p span{font-size:2rem}
 .popular .continue:hover{background-color:#76cc1e}.popular .continue:hover p{color:#fff}
 .popular .continue p{font-size:2.5rem;color:#76cc1e;margin:.5rem 1.5rem;transision:all 1s}
+.detail{width:80%;padding:2rem;margin:10rem auto 0;box-shadow:1px 1px 3px rgba(0,0,0,0.15);background-color:#fff}.detail .detailHeader img{width:30%;margin-left:2rem}
+.detail .detailHeader .words{float:right;margin-top:2rem;padding-left:2rem;width:60%;height:100%}.detail .detailHeader .words .title{margin-left:4rem;font-size:4rem}
+.detail .detailHeader .words .author{margin-left:4rem;font-size:1.8rem;color:#76cc1e}
+.detail .detailHeader .words .status{display:flex;flex-flow:row nowrap;align-items:flex-start;justify-content:space-around;align-content:stretch;color:#666}.detail .detailHeader .words .status .price{margin-left:2rem;margin-top:2rem;font-size:4rem;color:#f66b30}
+.detail .detailHeader .words .status .bold{font-weight:bold}
+.detail .detailHeader .words .progress{margin:.5rem 2rem 0 26rem}
+.detail .detailHeader .words .support{display:inline-block;margin-left:6rem;border:2px solid #76cc1e;border-radius:.8rem;transition:all .5s}.detail .detailHeader .words .support:hover{background-color:#76cc1e}.detail .detailHeader .words .support:hover p{color:#fff}
+.detail .detailHeader .words .support p{font-size:2.5rem;color:#76cc1e;margin:.5rem 4rem;transision:all 1s}
+.detail .detailHeader .words .buy{display:inline-block;margin-left:6rem;border:2px solid #f66b30;border-radius:.8rem;transition:all .5s}.detail .detailHeader .words .buy:hover{background-color:#f66b30}.detail .detailHeader .words .buy:hover p{color:#fff}
+.detail .detailHeader .words .buy p{font-size:2.5rem;color:#f66b30;margin:.5rem 4rem;transision:all 1s}
+.detail .detailHeader .words .share{display:inline-block;margin-left:6rem;border:2px solid #f9ee20;border-radius:.8rem;transition:all .5s}.detail .detailHeader .words .share:hover{background-color:#f9ee20}.detail .detailHeader .words .share:hover p{color:#fff}
+.detail .detailHeader .words .share p{font-size:2.5rem;color:#f9ee20;margin:.5rem 4rem;transision:all 1s}
+.detail .greenLine{width:90%;height:2px;margin:1rem auto;background-color:#76cc1e}
+.detail .detailImg{text-align:center}.detail .detailImg img{width:80%}
+.greenLine{width:80%;height:2px;margin:8rem auto 0;background-color:#76cc1e}
+.comment{width:60%;margin:6em auto 9rem}.comment textarea{padding:2rem;width:100%;resize:none;border:2px solid #76cc1e;border-radius:6px;font-size:2rem;box-shadow:1px 1px 3px rgba(0,0,0,0.15)}
+.comment .submit{width:11.5rem;margin-top:2rem;margin-right:2rem;float:right;border:2px solid #76cc1e;border-radius:.8rem;transition:all .5s}.comment .submit:hover{background-color:#76cc1e}.comment .submit:hover p{color:#fff}
+.comment .submit p{font-size:2.5rem;color:#76cc1e;margin:.5rem 3rem;transision:all 1s}
 footer{height:26rem;width:100%;background-color:#5cb85c}footer .big{padding-top:8rem;text-align:center;font-size:7rem;color:#fff;cursor:pointer}
 footer .words{padding:0 14rem;text-align:right;color:#fff;font-size:1.6rem}footer .words p:last-child{font-size:1.8rem}
 #loginView{position:absolute;top:0;left:100%;background-color:#000;width:100%;height:100%;opacity:0;transition:all .5s;z-index:50}#loginView .flag{margin:15% auto 0;width:30%;color:#f66b30;text-align:center;border:2px solid #f66b30;border-radius:.8rem}#loginView .flag p{margin:1.5rem;font-size:2.2rem}

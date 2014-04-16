@@ -28,7 +28,7 @@
 		<div class="gallery">
 			<?php
 				require('php/init.php');
-				$sql = 'SELECT item.id, item.title, item.author, item.price, item.img, item.expect, item.support, item.remain FROM hot_item JOIN item ON hot_item.item_id = item.id ORDER BY hot_item.rank';
+				$sql = 'SELECT item.id, item.title, item.author, item.price, item.img, item.expect, item.support, item.remain FROM item_hot JOIN item ON item_hot.item_id = item.id ORDER BY item_hot.rank';
 				$result=$conn->query($sql);
 				$content = '';
 				while($row=$result->fetch_object()){
@@ -37,7 +37,7 @@
 					$content .= 	'<div class="description">';
 					$content .= 		'<p class="title">'	. $row->title . '</p>';
 					$content .=			'<p class="author">' . $row->author . '</p>';
-					$content .= 		'<p class="price">'	. $row->price . '</p>';
+					$content .= 		'<p class="price">¥' . $row->price . '</p>';
 					$content .=		'</div>';
 					$content .=		'<hr />';
 					$content .= 	'<div class="status">';
@@ -53,8 +53,7 @@
 				}
 				echo $content;
 				$result->close();
-				$conn->close();
-				?>
+			?>
 		</div>
 		<div class="continue" onclick="location.href='more.php'">
 			<p>More <span class="glyphicon glyphicon-chevron-right"></span></p>
