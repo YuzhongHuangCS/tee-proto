@@ -29,7 +29,7 @@
 				$content = '';
 				while($row=$result->fetch_object()){
 					$content .= '<div class="item">';
-					$content .= 	'<img src="' . $row->img . '">';
+					$content .= 	'<img src="' . $row->img . '" onclick=location.href="detail.php?itemID=' .$row->id . '">';
 					$content .= 	'<div class="description">';
 					$content .= 		'<p class="title">'	. $row->title . '</p>';
 					$content .=			'<p class="author">' . $row->author . '</p>';
@@ -40,7 +40,7 @@
 					$content .= 		'<div class="percent"><p>已达到</p><p class="bold">' . round( ($row->support)/($row->expect)*100 ) .  '%</p></div>';
 					$content .=			'<div class="reach"><p>已获支持</p><p class="bold">¥' . $row->support . '</p></div>';
 					$content .=			'<div class="time"><p>剩余时间</p><p class="bold">' . $row->remain . '</p></div>';
-					$content .=			'<div class="support"><p>支持</p></div>';
+					$content .=			'<div class="support" onclick=location.href="detail.php?itemID=' .$row->id . '"><p>支持</p></div>';
 					$content .= 	'</div>';
 					$content .= 	'<div class="progress">';
 					$content .= 		'<div class="progress-bar progress-bar-success" role="progressbar" style="width: ' . round( ($row->support)/($row->expect)*100 ) . '%"></div>';

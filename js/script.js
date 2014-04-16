@@ -14,6 +14,11 @@ $(document).ready(function(){
 			});
 		});
 	});
+	$('#hot').click(function() {
+		var scroll = $("#hot").offset().top;
+		scroll -= 10;
+		$('html,body').animate({scrollTop: scroll});
+	});
 	var navElement = document.querySelector("nav");
 	var headroom = new Headroom(navElement, {
   		"tolerance": 5,
@@ -24,9 +29,7 @@ $(document).ready(function(){
     		"unpinned": "slideOutUp"
   		}
 	});
-headroom.init();
-	// 初始化
-	headroom.init(); 
+	headroom.init();
 });
 function changeBanner(bannerID){
 	var newSrc;
